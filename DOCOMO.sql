@@ -33,10 +33,10 @@ ON a.appln_id = t207.appln_id
 JOIN 	(
 SELECT 
   	person_id, 
-    psn_name, 
-    person_address, 
-    person_ctry_code 
-from tls206_person 
-where t206.psn_name like 'docomo%';
-)  t206
-ON t207.person_id = t206.person_id
+    	psn_name, 
+    	person_address, 
+    	person_ctry_code 
+from tls206_person
+where p.psn_name like 'docomo%';
+)  p
+ON p.person_id = t206.person_id
