@@ -20,7 +20,7 @@ JOIN (
         person_address, 
         person_ctry_code
     FROM tls206_person
-    WHERE psn_name LIKE '%docomo%'
+    WHERE psn_name LIKE '%company_name%'
 ) p
     ON p.person_id = t207.person_id
 ;
