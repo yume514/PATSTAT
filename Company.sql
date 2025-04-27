@@ -1,5 +1,5 @@
 SELECT
-  	 a.appln_id
+  	a.appln_id
 	, appln_auth
 	, appln_filing_date
 	, appln_filing_year
@@ -10,7 +10,7 @@ FROM tls201_appln a
 JOIN(
 	SELECT
     	t.appln_id
-		,appln_title
+	,appln_title
     	, appln_title_lg
 FROM tls202_appln_title
 ) t
@@ -18,7 +18,7 @@ ON a.appln_id = t.appln_id
 JOIN(
 	SELECT
     	ab.appln_id
-		,appln_abstract
+	,appln_abstract
     	, appln_abstract_lg
 FROM tls203_appln_abstr
 ) ab
@@ -26,7 +26,7 @@ ON a.appln_id = ab.appln_id
 JOIN 	(
 SELECT 
 	t207.person_id, 
-    t207.appln_id
+    	t207.appln_id
 from tls207_pers_appln
 )  t207
 ON a.appln_id = t207.appln_id
