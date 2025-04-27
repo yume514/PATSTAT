@@ -7,4 +7,11 @@ SELECT
   invt_seq_nr 
 FROM tls206_person AS t206
 JOIN tls207_pers_appln pa ON pa.person_id = t206.person_id
-WHERE t206.psn_name LIKE '%docomo%'
+WHERE t206.psn_name LIKE '%docomo%';
+
+-- 圧縮版
+SELECT DISTINCT 
+	t206.person_id, t206.psn_name, person_address, person_ctry_code 
+from tls206_person as t206
+JOIN tls207_pers_appln pa ON pa.person_id = t206.person_id
+where t206.psn_name like '%qualcomm%';
