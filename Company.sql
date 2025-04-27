@@ -37,6 +37,6 @@ SELECT
     	person_address, 
     	person_ctry_code 
 from tls206_person
-where p.psn_name like 'docomo%';
+where p.psn_name like '%Company_name%';
 )  p
 ON p.person_id = t206.person_id
