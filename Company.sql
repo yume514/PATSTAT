@@ -5,7 +5,9 @@ SELECT
     a.appln_filing_year,
     a.docdb_family_id,
     a.inpadoc_family_id,
-    a.docdb_family_size
+    a.docdb_family_size,
+	p.person_id,   
+	p.psn_name
 FROM tls201_appln a
 JOIN tls202_appln_title t
     ON a.appln_id = t.appln_id
@@ -20,7 +22,7 @@ JOIN (
         person_address, 
         person_ctry_code
     FROM tls206_person
-    WHERE psn_name LIKE '%company_name%'
+    WHERE psn_name LIKE '%company%'
 ) p
     ON p.person_id = t207.person_id
 ;
