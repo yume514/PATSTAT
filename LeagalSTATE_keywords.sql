@@ -1,6 +1,13 @@
 SELECT
 	*
-FROM tls201_appln a
+FROM(
+	SELECT
+    	appln_id,
+        docdb_family_id,
+        inpadoc_family_id,
+        docdb_family_size
+	FROM	tls201_appln
+)	a
 JOIN(
 	SELECT
     	appln_id,
@@ -21,4 +28,4 @@ JOIN(
     FROM tls803_legal_event_code
 ) lec ON lec.event_code = le.event_code
 JOIN tls203_appln_abstr ab ON ab.appln_id = a.appln_id
-WHERE ab.appln_abstract LIKE '%keywords%';
+WHERE ab.appln_abstract LIKE '%SLAM%';
