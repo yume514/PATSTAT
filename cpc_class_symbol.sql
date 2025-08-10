@@ -9,7 +9,8 @@ SELECT DISTINCT
     a.appln_filing_year,
     a.docdb_family_id,
     a.inpadoc_family_id,
-    a.docdb_family_size
+    a.docdb_family_size,
+	cpc.cpc_class_symbol
 FROM tls201_appln a
 JOIN tls202_appln_title t ON a.appln_id = t.appln_id
 JOIN tls203_appln_abstr ab ON a.appln_id = ab.appln_id
