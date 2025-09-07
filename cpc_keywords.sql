@@ -19,7 +19,7 @@ JOIN tls224_appln_cpc cpc
 JOIN tls203_appln_abstr ab 
     ON ab.appln_id = a.appln_id
 WHERE
-    ab.appln_abstract LIKE '%keywords%'
+    LOWER(ab.appln_abstract) LIKE '%keywords%'
 GROUP BY
     cpc.cpc_class_symbol
 ORDER BY
